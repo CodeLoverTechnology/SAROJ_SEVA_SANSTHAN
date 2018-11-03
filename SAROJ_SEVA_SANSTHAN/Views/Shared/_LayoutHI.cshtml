@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - सरोज सेवा संस्थान</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/bootstrap-social.css" rel="stylesheet" />
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="bg-dark">
+                <div class="row">
+
+                    <div style="color:white;text-align:center;width:100%;margin:5px;">
+                        <div style="float:left">
+                            Government of India Society Act Sec 21,1860
+                        </div>
+
+
+                        स्वच्छ भारत | शिक्षित भारत | स्वस्थ भारत
+                        <div style="float:right">
+                            Regn No- S000835, 2017-18
+                            @*Income Tax of India Exemption 12AA Certificate
+        CIT(E) PAT/12AA/O4(77)2018-19/2306-10 DT 28 JUN 2018*@
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <div class="logo">
+                        <a href="~/Home/Index"><img src="~/Content/Images/SSSLogo.jpeg" class="img-thumbnail" title="सरोज सेवा संस्थान" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="text-center">
+                        <h1 class="text-danger mb-1">सरोज सेवा संस्थान</h1>
+                        <h4 class="mb-1">बघनोचा, वैशाली (बिहार)</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <div class="text-center mt-2">
+                        @*<select class="mt-3">
+                                <option>English</option>
+                                <option>Hindi</option>
+                            </select>*@
+                        <div>
+                            <label class="btn-light pt-1 pb-1 pl-2 pr-2"> @Html.ActionLink("Eng", "Index", "Home", null, null)  </label>
+                            <label class="active btn btn-dark pt-1 pb-1 pl-2 pr-2">@Html.ActionLink("हिन्दी", "Index", "HomeHi", null, null)</label>
+                         </div>
+                        <div class="container">
+                            <div>
+                                <button id="down">-</button>
+                                <label>Size :<span id="font-size"></span></label>
+                                <button id="up">+</button>
+                            </div>
+                        </div>
+                        @*<a href="#" class="btn btn-light">Login</a>*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbarv sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="/HomeHi/Index">होम</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="/HomeHi/About">About Us</a>
+                    </li>
+                    @*<li class="nav-item">
+            <a class="nav-link text-white pl-4 pr-4" href="/Home/Vision">Vision</a>
+        </li>*@
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="/HomeHi/Mission">VISION &amp; MISSION</a>
+                    </li>
+                    @*<li class="nav-item">
+            <a class="nav-link text-white pl-4 pr-4" href="/Home/Invitation">Invitation</a>
+        </li>*@
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="/HomeHi/Gallery">गैलरी</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="/HomeHi/Contact">संपर्क</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="https://www.payumoney.com/paybypayumoney/#/10BDE53FD68D77F19D540C7BCA6FB821" target="_blank" title="गाँव के बच्चो के विकाश के लिए दान दे">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white pl-4 pr-4" href="/HomeHi/Enquiry">Enquiry</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <div class="ContactForm">
+            <div class="pb-4 w-100 bg-white" style="max-width:470px;">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h2 class="bg-primary text-white p-1 pl-3">ENQUIRY FORM </h2>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="img-thumbnail pl-3 pr-3" style="font-size: 13px;min-height: 485px;background-color: #ffffffc4;">
+                            @Html.Partial("_EnquiryView")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="MySidePopupBtn btn btn-primary" onclick="openNav()">Enquiry</button>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    @*<-------------Start Social Icon------------------------>*@
+    <div class="sticky-container">
+        <ul class="sticky">
+            <li>
+                <img src="~/Content/images/facebook_circle.png" width="32" height="32">
+                <p><a href="https://www.facebook.com/" target="_blank">Like Us on<br>Facebook</a></p>
+            </li>
+            <li>
+                <img src="~/Content/images/twitter_circle.png" width="32" height="32">
+                <p><a href="https://twitter.com/" target="_blank">Follow Us on<br>Twitter</a></p>
+            </li>
+            <li>
+                <img src="~/Content/images/gplus_circle.png" width="32" height="32">
+                <p><a href="https://plus.google.com/" target="_blank">Follow Us on<br>Google+</a></p>
+            </li>
+            <li>
+                <img src="~/Content/images/linkedin_circle.png" width="32" height="32">
+                <p><a href="https://www.linkedin.com/" target="_blank">Follow Us on<br>LinkedIn</a></p>
+            </li>
+            <li>
+                <img src="~/Content/images/youtube_circle.png" width="32" height="32">
+                <p><a href="https://www.youtube.com/" target="_blank">Subscribe on<br>YouYube</a></p>
+            </li>
+            <li>
+                <img src="~/Content/images/pin_circle.png" width="32" height="32">
+                <p><a href="https://www.pinterest.com/" target="_blank">Follow Us on<br>Pinterest</a></p>
+            </li>
+        </ul>
+    </div>
+    @*<-------------Stop Social Icon------------------------>*@
+
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <div class="bg-secondary pb-5 pl-0 pr-0 pt-3 text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <h5 class="text-white text-center">QUICK LINKS</h5>
+                        <hr style="border-top:1px solid #ccc;" />
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/About">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Vision">Vision</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Mission">Mission</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Invitation">Invitation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Enquiry">Enquiry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-1 pl-4 pr-4" href="/Home/Contact">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <h5 class="text-white text-center">CONTACT MAP VAISHALI</h5>
+                        <hr style="border-top:1px solid #ccc;" />
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.1646009320993!2d85.5175017146338!3d25.59944612154587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeaabf003a68f6454!2sShiv+mandir+baghnocha!5e0!3m2!1sen!2sin!4v1539328250169" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <h5 class="text-white text-center">CONTACT MAP PATNA</h5>
+                        <hr style="border-top:1px solid #ccc;" />
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.939031358409!2d85.14145341463393!3d25.606942121239268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed585e10b1dc39%3A0x860680bc2dac1013!2sCDA+Building%2C+Radhe+Krishn+Colony%2C+Ghrounda%2C+Patna%2C+Bihar+800019!5e0!3m2!1sen!2sin!4v1539328376056" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <h5 class="text-white text-center">CONTACT US</h5>
+                        <hr style="border-top:1px solid #ccc;"  />
+                        <p><b>Mobile :</b> 9797164403, 8860845700</p>
+                        <p>
+                            <b>Email :</b> sarojsevasansthanbaghnocha@gmail.com
+                        </p>
+                        <h5 class="text-white mt-3 text-center">FOLLOW US</h5>
+                        <hr style="border-top:1px solid #ccc;"  />
+                        <div class="SocialIcon">
+                            <a href="https://www.facebook.com/" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="https://plus.google.com/" class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.youtube.com/" class="btn btn-social-icon btn-youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.pinterest.com/" class="btn btn-social-icon btn-pinterest"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="fixed-bottom p-1 pl-4 pr-4 bg-dark">
+            <p class="m-0 float-left text-white" style="font-family:Arial;">Copy Right 2018 All reserved<span class="text-light" style="font-family:Arial;"> सरोज सेवा संस्थान</span></p>
+            <p class="m-0 float-right text-white" style="font-family:Arial;">Presented By :<a href="http://codelovertechnology.com/" target="_blank"> CodeLover Technology</a></p>
+        </footer>
+    </div>
+
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#txtPopMobileNo").keydown(function (event) {
+            k = event.which;
+            if ((k >= 96 && k <= 105) || k == 8) {
+                if ($(this).val().length == 10) {
+                    if (k == 8) {
+                        return true;
+                    } else {
+                        event.preventDefault();
+                        return false;
+                    }
+                }
+            } else {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $("#txtFatherPopMobNo").keydown(function (event) {
+            k = event.which;
+            if ((k >= 96 && k <= 105) || k == 8) {
+                if ($(this).val().length == 10) {
+                    if (k == 8) {
+                        return true;
+                    } else {
+                        event.preventDefault();
+                        return false;
+                    }
+                }
+            } else {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/sleekslider.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script type="text/javascript">
+        function getSize() {
+            size = $("*").css("font-size");
+            size = parseInt(size, 10);
+            $("#font-size").text(size);
+        }
+
+        //get inital font size
+        getSize();
+
+        $("#up").on("click", function () {
+
+            // parse font size, if less than 50 increase font size
+            if ((size + 2) <= 50) {
+                $("*").css("font-size", "+=2");
+                $("#font-size").text(size += 2);
+            }
+        });
+
+        $("#down").on("click", function () {
+            if ((size - 2) >= 12) {
+                $("*").css("font-size", "-=2");
+                $("#font-size").text(size -= 2);
+            }
+        });
+
+        if ('@ViewBag.Status' != '') {
+            alert('@ViewBag.Status');
+        }
+    </script>
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

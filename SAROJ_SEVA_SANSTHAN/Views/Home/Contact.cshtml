@@ -1,0 +1,105 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Contact";
+}
+
+    <div class="container">
+        <div class="img-thumbnail ContactForm mt-4">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h2 class="bg-primary text-white p-1 pl-3">CONTACT US</h2>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="img-thumbnail pl-3 pr-3" style="font-size: 13px;min-height: 485px;">
+                        <div class="h5">Lieutenant Colonel Manmohan Thakur</div>
+                        <hr />
+                        <address style="min-height: 150px;">
+                            <p>
+                                10123/A, Baghnocha, Hasanpur, Mahnar
+                            </p>
+                            <p>Vaishali (Bihar)-844506</p>
+                            <p><b>Mobile :</b> 9797164403, 8860845700</p>
+                            <p>
+                                <b>Email :</b> sarojsevasansthanbaghnocha@gmail.com
+                            </p>
+                        </address>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.1646009320993!2d85.5175017146338!3d25.59944612154587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeaabf003a68f6454!2sShiv+mandir+baghnocha!5e0!3m2!1sen!2sin!4v1539328250169" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="img-thumbnail pl-3 pr-3" style="font-size: 13px;min-height: 485px;">
+                        <h4>Registration Details</h4>
+                        <hr />
+                        <address style="min-height: 150px;">
+                            Government of India Society Act Sec 21,1860<br />
+                            Regn No- S000835, 2017-18<br />
+                            <hr />
+                            Income Tax of India Exemption 12AA Certificate<br />
+                            CIT(E) PAT/12AA/O4(77)2018-19/2306-10 DT 28 JUN 2018<br />
+                        </address>
+                        <hr />
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.939031358409!2d85.14145341463393!3d25.606942121239268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed585e10b1dc39%3A0x860680bc2dac1013!2sCDA+Building%2C+Radhe+Krishn+Colony%2C+Ghrounda%2C+Patna%2C+Bihar+800019!5e0!3m2!1sen!2sin!4v1539328376056" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="img-thumbnail pl-3 pr-3" style="font-size: 13px;min-height: 485px;">
+                        @*<form action="/Home/Contact" id="contact" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <fieldset>
+                <legend><h5>SAROJ SEVA SANSTHAN ENQUIRY</h5></legend>
+                <div class="form-group has-info">
+                    <label class="control-label">Name</label>
+                    <input type="text" id="txtName" name="txtName" value="" class="form-control " placeholder="Enter full name" required="">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group has-info">
+                    <label class="control-label">Email Id</label>
+                    <input type="email" name="txtEmailID" id="txtEmailID" value="" class="form-control " placeholder="Enter email" required="">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group has-info">
+                    <label class="control-label">Mobile No</label>
+                    <input type="number" name="txtMobileNo" id="txtMobileNo" value="" class="form-control" maxlength="10" placeholder="Enter mobile" required="">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group has-info">
+                    <label class="control-label">Subject</label>
+                    <textarea name="txtMessage" id="txtMessage" rows="3" class="form-control" placeholder="Enter your message" required=""></textarea>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="row-fluid">
+                    <div style="text-align:center;">
+                        <button type="submit" class="btn btn-primary btn-social "> <i class="fa fa-share-square-o" aria-hidden="true"></i> SUBMIT </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>*@
+                        @Html.Partial("_EnquiryView")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#txtMobileNo").keydown(function (event) {
+            k = event.which;
+            if ((k >= 96 && k <= 105) || k == 8) {
+                if ($(this).val().length == 10) {
+                    if (k == 8) {
+                        return true;
+                    } else {
+                        event.preventDefault();
+                        return false;
+                    }
+                }
+            } else {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>

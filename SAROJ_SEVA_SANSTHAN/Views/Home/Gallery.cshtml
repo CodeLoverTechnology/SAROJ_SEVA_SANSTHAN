@@ -1,0 +1,379 @@
+﻿
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+}
+
+<div class="container">
+    <div class="img-thumbnail mt-4">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2 class="bg-primary text-white p-1 pl-3">GALLERY</h2>
+            </div>
+        </div>
+        <div class="row">
+            @{
+
+                //string PathName= Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                // string startupPath = System.IO.Directory.GetCurrentDirectory();
+                DirectoryInfo directory = new DirectoryInfo(Resources.SSSResources.GalaryPath);
+                FileInfo[] files = directory.GetFiles("*.*");
+                foreach (var FileName in files.OrderByDescending(x => x.CreationTime))
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="img-thumbnail mb-2">
+                            <a href="@(Resources.SSSResources.GalaryImagePath+FileName.Name)" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="SAROJ SEVA SANSTHAN-gallery">
+                                <img src="@(Resources.SSSResources.GalaryImagePath+FileName.Name)" class="img-fluid img_Gallery">
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+            @*<div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture1.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture1.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture2.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture2.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture3.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture3.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture4.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture4.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture5.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture5.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture6.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture6.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture7.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture7.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture8.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture8.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture9.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture9.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture10.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture10.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture11.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture11.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture12.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture12.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture13.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture13.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture14.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture14.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture15.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture15.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture16.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture16.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture17.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture17.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture18.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture18.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture19.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture19.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture20.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture20.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture21.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture21.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture22.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture22.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture23.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture23.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture24.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture24.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture25.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture25.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture26.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture26.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture27.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture27.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture28.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture28.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture29.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture29.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture30.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture30.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture31.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture31.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture32.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture32.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture33.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture33.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture34.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture34.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture35.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture35.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture36.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture36.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture37.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture37.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture38.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture38.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture39.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture39.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture40.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture40.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture41.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture41.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture42.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture42.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture43.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture43.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture44.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture44.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="img-thumbnail mb-2">
+                        <a href="~/Content/Gallery/Picture45.jpg" data-toggle="lightbox" data-title="SAROJ SEVA SANSTHAN" data-gallery="example-gallery">
+                            <img src="~/Content/Gallery/Picture45.jpg" class="img-fluid img_Gallery">
+                        </a>
+                    </div>
+                </div>*@
+
+            <script src="~/Scripts/Gallery_Slider/jquery-3.2.1.slim.min.js"></script>
+            <script src="~/Scripts/Gallery_Slider/popper.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            <script src="~/Scripts/Gallery_Slider/ekko-lightbox.min.js"></script>
+            <!-- for documentation only -->
+            <script type="text/javascript">
+                $(document).ready(function ($) {
+                    $(document).on('click', '[data-toggle="lightbox"]:not([data-gallery="navigateTo"]):not([data-gallery="example-gallery-11"])', function (event) {
+                        event.preventDefault();
+                        return $(this).ekkoLightbox({
+                            onShown: function () {
+                                if (window.console) {
+                                    return console.log('Checking our the events huh?');
+                                }
+                            },
+                            onNavigate: function (direction, itemIndex) {
+                                if (window.console) {
+                                    return console.log('Navigating ' + direction + '. Current item: ' + itemIndex);
+                                }
+                            }
+                        });
+                    });
+
+                });
+            </script>
+
+
+        </div>
+    </div>
+</div>
